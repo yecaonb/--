@@ -1,0 +1,1100 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+<meta charset="UTF-8">
+    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<title>野草自用</title>
+    
+<script defer="" async="" src="/vue.min.js"></script>
+    
+<script defer="" async="" src="/vant.min.js"></script>
+    
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            color: #000;
+            font-size: 12px;
+            font-family: Arial, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+            outline: none;
+        }
+
+        body {
+            background: transparent;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+
+        *:not(input, checkbox, textarea) {
+
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+
+        }
+
+        .popup_container {
+            position: absolute;
+            z-index: 1000;
+            left: 50%;
+            top: 0;
+        }
+
+        #H5AlertView {
+            width: 220px;
+            height: 300px;
+            position: absolute;
+            left: -110px;
+            top: 100px;
+            text-align: center;
+            zoom: 0.8;
+        }
+
+        #title-text {
+            padding-top: 0px;
+            font-size: 23px;
+            font-weight: 600;
+            color: #494949;
+        }
+
+        #info-text {
+            padding: 10px;
+            color: #494949;
+        }
+
+        #content-view {
+            z-index: 0;
+            background: #fff;
+            position: relative;
+            top: 0px;
+            border: 1px solid #E8E8E8;
+            border-radius: 16px;
+            padding: 10px;
+        }
+
+
+        button {
+            width: 100%;
+            height: 40px;
+            color: #fff;
+            background-color: #7FFFAA;
+            display: inline-block;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            border: none;
+            border-radius: 70px;
+            padding: 0 8px;
+            margin: 5px 0;
+            font-size: 18px;
+        }
+
+        button:active {
+            background-color: #007E40;
+            transform: translateY(3px);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            color: #494949;
+        }
+    </style>
+</head>
+
+
+<body>
+    
+<!--悬浮菜单-->
+    
+<div class="popup_container">
+        
+<div id="H5AlertView">
+            
+<section>
+                
+<h3 style="color: red;">美化高危功能谨慎使用封号后果自负<br>如要使用美化请先看说明<br>顺序:验证端口-验证条数-开功能-关后台<br>所有功能均卡注册开启<br>不要重复启动功能</h3>
+<table>
+                        
+<tbody>
+<tr>
+                        </tr>
+                        
+<tr>
+                        </tr>
+                    </tbody></table>
+
+                    
+<h1></h1>
+
+                    
+<h6>
+<img width="150" src="https://api.suyanw.cn/api/comic.php"></h6>                                                        
+<a style="color: blue;">野草半火美化版<html lang="zh">
+</a><br>
+<a style="color: green;">和平动物丛林版本<html lang="zh">
+</a>
+<a>
+      
+                                     
+<button onclick="yz()">验证条数必点</button>
+
+                            
+<button onclick="myFunction1()">
+                                
+<p style="color: orange;">M2 16系统透色</p>
+                            </button>
+                            
+<p id="1myText" style="display:none">
+                                
+ <button onclick="ts()">透视</button>
+ <button onclick="bs()">白色</button>
+ <button onclick="fs()">防闪</button>
+ <button onclick="tz()">透套装</button>
+ <button onclick="hy()">透幻影</button>
+ 
+                   </p>
+ 
+ <!--<button onclick="myFunction2()">
+                                
+<p style="color: orange;">和平美化功能</p>
+                            </button>
+                            
+<p id="2myText" style="display:none">-->
+ 
+ 
+                           
+ 
+ <button onclick="myFunction3()">
+                                
+<p style="color: orange;">美化枪械/配件/车皮</p>
+                            </button>
+                            
+<p id="3myText" style="display:none">
+                                
+ <button onclick="mh()">枪皮美化</button>
+ <button onclick="mh1()">配件美化</button>
+ <!--<button onclick="mh3()">车皮美化待定</button>
+ 
+
+               </p>
+ 
+ <button onclick="myFunction4()">
+ 
+ <p style="color: orange;">美化头发</p>
+                            </button>
+                                              
+ <p id="4myText" style="display:none">
+ <button onclick="tf()">火箭头发</button>
+ <button onclick="tf1()">小丑绿头发</button>
+     
+        </p>                   
+ 
+ <button onclick="myFunction5()">
+ 
+ <p style="color: orange;">美化衣物</p>
+                            </button>
+ <p id="5myText" style="display:none">
+ <button onclick="yw1()">炽羽金尊</button>
+ <button onclick="yw2()">兔兔小魔女</button>
+ <button onclick="yw3()">火箭101</button>
+ <button onclick="yw4()">绿色追光队服</button>
+ 
+ 
+        </p>                    
+  
+ <button onclick="myFunction6()">
+                                
+<p style="color: orange;">美化杂项</p>
+                            </button>
+                            
+<p id="6myText" style="display:none">
+ <button onclick="mh4()">飞行器降落伞</button>
+ <button onclick="mh2()">头盔背包美化</button>
+ <button onclick="bq()">表情美化待定</button>
+ <button onclick="tt()">美化套装防秃头</button>
+ 
+ 
+ 
+ 
+                            </p>
+
+ <button onclick="myFunction7()">
+                                
+<p style="color: orange;">cfm美化待定</p>
+                            </button>
+                            
+<p id="7myText" style="display:none">
+ <button onclick="bb1()">m4美化</button>
+ <button onclick="bb2()">ak美化</button>
+ <button onclick="bb3()">狙击美化</butto>
+                            </p>                       -->
+                            </button>
+                            </p>
+                            
+<button onclick="copyText()">美化对应说明</button>
+                            
+<script>﻿function refreshProcList() {
+	var procs = h5gg.getProcList();
+	var game;
+	var name;
+	for (var i = 0; i 
+< h5gg.getProcList()
+		.length; i++) {
+		if (h5gg.getProcList()[i].name == "ShadowTrackerExt") {
+			game = h5gg.getProcList()[i];
+			h5gg.setTargetProc(game.pid);
+			name = game.name;
+			h5gg.clearResults();
+		}
+	}
+	if (name == "ShadowTrackerExt") {} else {
+		alert("⚠️警告：请删除ano_tmp文件夹🟢在新号人物注册页面再打开本辅助❤️");
+		refreshProcList()
+	}
+}
+refreshProcList()
+
+function draw(fps) {
+	window.draw_state = 1;
+}
+
+function unDraw() {
+	clearCtx();
+	window.draw_state = 0;
+	setTimeout(function() {}, 100);
+}
+
+
+function hideMenu() {
+	var menu = document.querySelector("#H5AlertView");
+	menu.style.display = 'none';
+
+	setWindowTouch(false);
+}
+document.body.addEventListener('touchstart', function() {});
+
+setWindowDrag(0, 0, 0, 0);
+
+var iosScale = window.devicePixelRatio;
+var sWidth = 0;
+var sHeight = 0;
+
+var canvasDom = document.createElement("canvas");
+document.body.appendChild(canvasDom);
+canvasDom.style.height = "100%";
+canvasDom.style.width = "100%";
+
+var layout = function() {
+
+	if (window.lastorientation == window.orientation) return;
+	window.lastorientation = window.orientation;
+
+	if (Math.abs(window.orientation) == 90) {
+		setWindowRect(0, 0, window.screen.height, window.screen.width);
+		canvasDom.width = window.screen.height * iosScale;
+		canvasDom.height = window.screen.width * iosScale;
+		sWidth = window.screen.height;
+		sHeight = window.screen.width;
+	} else {
+		setWindowRect(0, 0, window.screen.width, window.screen.height);
+		canvasDom.height = window.screen.height * iosScale;
+		canvasDom.width = window.screen.width * iosScale;
+		sWidth = window.screen.width;
+		sHeight = window.screen.height;
+	}
+}
+
+layout();
+window.addEventListener("orientationchange", layout, false);
+
+setButtonAction(function() {
+
+	var menu = document.querySelector("#H5AlertView");
+	if (menu.style.display == 'none') {
+		menu.style.display = 'block';
+		setWindowTouch(true);
+	} else {
+		menu.style.display = 'none';
+		setWindowTouch(false);
+	}
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function yz() {
+	h5gg.clearResults();
+	h5gg.searchNumber('0.05499718338', 'F32', '0x100000000', '0x300000000');
+	alert('数据：' + h5gg.getResultsCount() + '条，【数据必须4条否则划后台重来】');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function mh() {
+    alert('数据略多请耐心等待提示修改完成');
+    h5gg.clearResults();
+    h5gg.searchNumber('10100100', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('101001107', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10100200', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('101002024', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10100300', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('101003078', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10100400', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('101004087', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10100500', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('101005044', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10100600', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('101006053', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10100700', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('101007018', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10100800', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('101008060', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10100900', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('101009005', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10101000', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('101010016', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10101100', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('101011004', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10101200', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('101012008', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10101300', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('101013009', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10200100', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('102001045', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10200200', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('102002060', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10200300', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('102003035', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10200400', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('102004018', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10200500', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('102005016', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10200700', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('102007005', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10200800', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('102008001', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10210500', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('102105035', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10300100', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('103001051', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10300200', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('103002043', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10300300', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('103003011', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10300400', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('103004025', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10300500', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('103005017', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10300600', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('103006038', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10300700', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('103007023', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10300800', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('103008010', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10300900', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('103009010', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10301000', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('10301000', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10301100', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('103011008', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10301200', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('103012015', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10301300', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('103013005', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10301400', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('103014005', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10301500', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('103015025', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10301600', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('10301600', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10310000', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('10310000', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10400100', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('104001025', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10400200', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('104002024', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10400300', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('104003021', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10400400', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('104004015', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10400500', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('104005002', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10410000', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('104100011', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10500100', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('105001031', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10500200', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('105002050', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10501000', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('105010011', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10501200', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('105012016', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10501300', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('10501300', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10800100', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('108001009', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10800200', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('108002020', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10800300', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('10800300', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10800400', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('108004072', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10701000', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('107010004', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10700700', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('107007003', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('10700600', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('107006001', 'I32');
+    alert('枪皮美化完成');
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+function mh1() {
+    alert('数据略多请耐心等待提示修改完成');
+    h5gg.clearResults();
+    h5gg.searchNumber('20300100', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100605011', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20300200', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100605012', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20300300', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100605013', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20301400', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100605014', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20300400', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100605015', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20301500', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100605016', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20300500', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('301201317', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20200100', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100605024', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20200200', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100605025', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20200400', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100605023', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20200600', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100605026', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20200500', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100605021', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20200700', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100605022', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20100900', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100605027', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20101100', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100605029', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20101000', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100605028', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20100200', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('200203427', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20100600', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('200203429', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20100400', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('200203428', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20100300', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('300303423', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20100700', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('300303425', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20100500', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('3003003424', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20401200', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100605018', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20401100', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100605020', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20401300', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100605019', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20400500', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('200203418', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20400400', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('200203420', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20400600', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('200203419', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20400800', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('300303420', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20400700', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('300303422', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20400900', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('300303421', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20300800', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100605303', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20300900', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100605303', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20302700', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100605303', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20301100', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('300501703', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20301200', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('300501703', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('29500200', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('500205002', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20500200', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100408630', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20500500', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100408630', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20500600', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100408630', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20500700', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100408630', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20500800', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100408630', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20500900', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100408630', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20501000', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100408630', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20509900', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100408630', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20501100', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100408630', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20501200', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('100408630', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20302500', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('210503503', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20101200', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('400301924', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20401700', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('410000911', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20500300', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('300204226', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20301000', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('200303503', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20302200', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('200401803', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20301900', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('300801003', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('20302000', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('300801003', 'I32');
+    alert('配件美化完成');
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    function mh3() {
+    alert('数据略多请耐心等待提示修改完成');
+    alert('车皮美化完成');
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    function mh4() {
+    h5gg.clearResults();
+    h5gg.searchNumber('411002', 'I32', '0x10000000', '0x300000000');
+    h5gg.editAll('411123', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('703001', 'I32', '0x100000000','0x3000000000');
+    h5gg.editAll('703491', 'I32');
+    alert('降落伞飞行器全部美化完成');
+    }
+    
+    
+    
+    
+    
+    
+    
+    function mh2() {
+    h5gg.clearResults();
+    h5gg.searchNumber('502001', 'I32', '0x100000000','0x3000000000');
+    h5gg.editAll('502001092', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('502002', 'I32', '0x100000000','0x3000000000');
+    h5gg.editAll('502002092', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('502003', 'I32', '0x100000000','0x3000000000');
+    h5gg.editAll('502003092', 'I32');
+    alert('童趣迷兔头盔美化完成');
+    h5gg.clearResults();
+    h5gg.searchNumber('501001', 'I32', '0x100000000','0x3000000000');
+    h5gg.editAll('501001333', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('501002', 'I32', '0x100000000','0x3000000000');
+    h5gg.editAll('501002333', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('501003', 'I32', '0x100000000','0x3000000000');
+    h5gg.editAll('501003333', 'I32');
+    alert('①方案背包美化沙丘之主完成');
+    h5gg.clearResults();
+    h5gg.searchNumber('501004', 'I32', '0x100000000','0x3000000000');
+    h5gg.editAll('501001368', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('501005', 'I32', '0x100000000','0x3000000000');
+    h5gg.editAll('501002368', 'I32');
+    h5gg.clearResults();
+    h5gg.searchNumber('501006', 'I32', '0x100000000','0x3000000000');
+    h5gg.editAll('501003368', 'I32');
+    alert('②方案背包美化觉醒初号机完成');
+    alert('头盔背包全部美化完成');
+    }
+    
+    
+    
+    
+   
+    function tt() {
+    h5gg.clearResults();
+    h5gg.searchNumber('401993', 'I32', '0x100000000','0x3000000000');
+    h5gg.editAll('400985', 'I32');
+    alert('防秃头美化完成');
+    }
+     
+     
+     
+     function bq() {
+    alert('表情美化完成');
+    }
+     
+     
+     
+     
+     
+     
+    function yw1() {
+    h5gg.clearResults();
+    h5gg.searchNumber('403251', 'I32', '0x100000000','0x3000000000');
+    h5gg.editAll('403888', 'I32');
+    alert('炽羽金尊美化完成');
+    }
+    function yw2() {
+    h5gg.clearResults();
+    h5gg.searchNumber('413604', 'I32', '0x100000000','0x3000000000');
+    h5gg.editAll('413609', 'I32');
+    alert('兔兔小魔女美化完成');
+    }
+    function yw3() {
+    h5gg.clearResults();
+    h5gg.searchNumber('403192', 'I32', '0x100000000','0x3000000000');
+    h5gg.editAll('453021', 'I32');
+    alert('火箭101美化完成');
+    }
+    function yw4() {
+    h5gg.clearResults();
+    h5gg.searchNumber('403061', 'I32', '0x100000000','0x3000000000');
+    h5gg.editAll('413039', 'I32');
+    alert('绿色追光队服美化完成');
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+      
+        
+          
+            
+              
+                
+                  
+                    
+                      
+                        
+                          
+                            
+                            
+                            
+                            
+                              
+                                
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                                                    
+                                  
+                                  
+    function tf() {
+    h5gg.clearResults();
+    h5gg.searchNumber('401023', 'I32', '0x100000000','0x3000000000');
+    h5gg.editAll('40609037', 'I32');
+    alert('火箭头发美化完成');
+    }
+    function tf1() {
+    h5gg.clearResults();
+    h5gg.searchNumber('401092', 'I32', '0x100000000','0x3000000000');
+    h5gg.editAll('40609054', 'I32');
+    alert('小丑绿头发美化完成');
+    }
+                              
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                        
+    
+function hy() {
+    h5gg.clearResults();
+    h5gg.searchNumber('812604', 'I32', '0x100000000','0x3000000000');
+    h5gg.editAll('413044', 'I32');
+    alert('透幻影完成');
+    }
+
+function tz() {
+    h5gg.clearResults();
+    h5gg.searchNumber('405011', 'I32', '0x100000000','0x3000000000');
+    h5gg.editAll('403825', 'I32');
+    alert('透套装完成');
+    }
+
+    function bs() {
+    h5gg.clearResults();
+    h5gg.searchNumber('0.05499718338', 'F32', '0x100000000', '0x160000000');
+    h5gg.searchNearby('1', 'F32', '0x20');
+    var count = h5gg.getResultsCount();
+    var r = h5gg.getResults(2);
+    r = r[1];
+    var addr1 = r.address;
+    h5gg.setValue(addr1, 12, "F32");
+    alert('白色开启完成');
+    }
+    
+  
+    
+    
+    function ts() {
+    h5gg.clearResults();
+    h5gg.searchNumber('-1315307262', 'I32', '0x10000000', '0x300000000');
+    h5gg.searchNearby('1320', 'I16', '0x100');
+    h5gg.searchNumber('1320', 'I16', '0x10000000', '0x300000000');
+    h5gg.editAll('1395', 'I16');
+    alert('透视开启完成');
+    }
+    
+    
+    function fs() {
+    h5gg.clearResults();
+    h5gg.searchNumber('43343', 'I64', '0x100000000', '0x3000000000');
+    h5gg.searchNearby('-1', 'F32', '0x100');
+    var count = h5gg. getResultsCount();
+    var r = h5gg.getResults(count);
+    for(var i=0; i
+<count; i++) {
+    var addr1 = r[i].address;
+    var weishu = /1C0$/;
+    var pd = weishu.test(addr1);
+    if(pd){
+    h5gg.setValue(addr1, -1999, "F32");
+    }}
+    alert('防闪开启完成');
+    }
+
+var fpsVal = 16.7;
+var cacheVal = 1000;
+var myTeam = 0;
+
+var baseAddr = Number(h5gg.getRangesList(0)[0].start);
+var GWorld = 0;
+
+
+function readInt(addr) {
+	return Number(h5gg.getValue(addr, "I32"));
+}
+
+function readLong(addr) {
+	return Number(h5gg.getValue(addr, "I64"));
+}
+
+function readFloat(addr) {
+	return Number(h5gg.getValue(addr, "F32"));
+}
+
+function isNull(addr) {
+	return (addr 
+< 0x100000000 || addr > 0x300000000);
+}
+
+
+
+function myFunction() {
+	var x = document.getElementById("myText");
+	if (x.style.display === "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
+
+function myFunction1() {
+	var x = document.getElementById("1myText");
+	if (x.style.display === "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
+
+function myFunction2() {
+	var x = document.getElementById("2myText");
+	if (x.style.display === "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
+
+function myFunction3() {
+	var x = document.getElementById("3myText");
+	if (x.style.display === "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
+
+function myFunction4() {
+	var x = document.getElementById("4myText");
+	if (x.style.display === "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
+
+
+function myFunction5() {
+	var x = document.getElementById("5myText");
+	if (x.style.display === "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
+
+
+function myFunction6() {
+	var x = document.getElementById("6myText");
+	if (x.style.display === "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
+
+function myFunction7() {
+	var x = document.getElementById("7myText");
+	if (x.style.display === "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
+
+function copyText() {
+	window.location.href = "https://docs.qq.com/doc/DT2dIQWV6TlFFSmxE";
+}
+
+</script></a></section></div></div></body></html>
